@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Pulling latest code...'
+                git branch: 'main', url: 'https://github.com/aashrita20/mediguide.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building Mediguide...'
+                sh 'npm install'  // adjust for your tech stack
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh 'npm test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Mediguide...'
+                sh 'echo "Deploy step placeholder"'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs!'
+        }
+    }
+}
