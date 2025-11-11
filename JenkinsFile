@@ -20,8 +20,7 @@ pipeline {
             steps {
                 echo '🚀 Deploying Mediguide...'
                 bat 'echo Files copied to deployment directory (placeholder)'
-                // You could do something like:
-                // bat 'xcopy /Y /E * "C:\\inetpub\\wwwroot\\mediguide"'
+                // Example: bat 'xcopy /Y /E * "C:\\inetpub\\wwwroot\\mediguide"'
             }
         }
     }
@@ -35,9 +34,3 @@ pipeline {
         }
     }
 }
-
-        }
-    }
-}
-
-
